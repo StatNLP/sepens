@@ -1,2 +1,5 @@
-# sepens
-Ensembling neural networks for improved prediction and privacy in early diagnosis of sepsis
+# sepens: An Ensemble for Sepsis Prediction
+
+Code for the paper "Ensembling neural networks for improved prediction and privacy in early diagnosis of sepsis"
+
+Documentation follows.
