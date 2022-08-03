@@ -99,3 +99,4 @@ else
     echo "ERROR: Please extract the data archive 'SepsisExp.tar.gz' into the current directory."
 fi
 
+fi
