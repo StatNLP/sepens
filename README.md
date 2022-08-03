@@ -65,7 +65,9 @@ Based on the mean suqared error and the correlation to existing ensemble members
 ``` bash
 . ./grow_ensemble_perrone.py 0 | tee logs/grow_ensemble.log   # 0..3: split number for cross-validation
 tail -n1 logs/grow_ensemble.log > new_ensemle.py
+sed "s/ /\n/g" new_ensemble.py | sed 's/[^0-9]*//g' | sed -r '/^\s*$/d' > new_ensemble.lst
 ```
+Generates a python-set for inclusin in code and a text list for use in bash scripts.
 
 ## Make predictions on test set
 
@@ -74,7 +76,13 @@ Generate predictions for the fully trained model:
 . ./inference_fullmodel.sh
 ```
 
-Generate predictions for the uniform and the weighted ensemble:
+Generate predictions for each ensemble model:
+``` bash
+. ./inference_ensmodels.sh
+```
+This takes a lot of time. You might want to parallelize the step above.
+
+Combine predictions for the uniform and the weighted ensemble:
 ``` bash
 . ./inference_ensemble.sh
 ```
