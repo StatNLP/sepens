@@ -53,7 +53,7 @@ You might want to parallelize this step as each model is trained independently f
 
 ## Make predictions on dev set
 
-Generate poredictions for all patient specific (pool) models:
+Generate predictions for all patient specific (pool) models:
 ``` bash
 . ./inference_poolmodels.sh
 ```
@@ -69,7 +69,40 @@ tail -n1 logs/grow_ensemble.log > new_ensemle.py
 
 ## Make predictions on test set
 
+Generate predictions for the fully trained model:
+``` bash
+. ./inference_fullmodel.sh
+```
+
+Generate predictions for the uniform and the weighted ensemble:
+``` bash
+. ./inference_ensemble.sh
+```
+
 ## Calculate metrics
+
+Generate AUROC for fully trained and ensemble models for different time intervals:
+``` bash
+. ./python calc_auroc.py
+```
+
+Generate AUROC for fully trained and ensemble models for different time intervals and various privacy budgets:
+``` bash
+. ./python calc_auroc.py
+```
+Calculates AUROC and accuracy loss.
+
+## Membership attack
+
+Apply a membership attack on the fully trained model for various privacy budgets.
+``` bash
+. ./python membership_fullmodel_epsilon_1k.py
+```
+
+Apply a membership attack on the uniform ensemble model for various privacy budgets.
+``` bash
+. ./python membership_ensemble_epsilon_alltrain_1k.py
+```
 
 ## Citation
 
