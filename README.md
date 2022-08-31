@@ -91,12 +91,12 @@ Combine predictions for the uniform and the weighted ensemble:
 
 Generate AUROC for fully trained and ensemble models for different time intervals:
 ``` bash
-. ./python calc_auroc.py
+python3 calc_auroc.py
 ```
 
 Generate AUROC for fully trained and ensemble models for different time intervals and various privacy budgets:
 ``` bash
-. ./python calc_auroc.py
+python3 calc_auroc_laplace_all.py
 ```
 Calculates AUROC and accuracy loss.
 
@@ -104,12 +104,12 @@ Calculates AUROC and accuracy loss.
 
 Apply a membership attack on the fully trained model for various privacy budgets.
 ``` bash
-. ./python membership_fullmodel_epsilon_1k.py
+python3 membership_fullmodel_epsilon_1k.py
 ```
 
 Apply a membership attack on the uniform ensemble model for various privacy budgets.
 ``` bash
-. ./python membership_ensemble_epsilon_alltrain_1k.py
+python3 membership_ensemble_epsilon_alltrain_1k.py
 ```
 
 ## Citation
